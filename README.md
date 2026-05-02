@@ -1,5 +1,3 @@
-# whereWork-assistant
-WhereWork AI: A high-performance PDF chatbot featuring vector search (FAISS), lightning-fast LLM responses via Groq, and a clean web UI.
 # WhereWork AI Assistant
 
 WhereWork AI is a smart, context-aware chatbot built with FastAPI and a Retrieval-Augmented Generation (RAG) pipeline. It provides instant answers to user queries based on a provided knowledge base (PDF manual).
@@ -95,4 +93,3 @@ The server will be available at `http://127.0.0.1:8000`.
 1. **Initialization:** On startup, `rag.py` checks for an existing index cache (`datamanual/index_cache.pkl`). If it doesn't exist, it reads `manual.pdf`, splits the text into chunks, generates vector embeddings using `all-MiniLM-L6-v2`, and builds a FAISS index.
 2. **Retrieval:** When a user submits a query, the application converts the question into an embedding and performs a similarity search against the FAISS index to find the most relevant text chunks from the PDF.
 3. **Generation:** The retrieved context and the user's query are passed to the Groq API. The LLM generates a strictly context-aware response, which is then returned to the user interface.
-
